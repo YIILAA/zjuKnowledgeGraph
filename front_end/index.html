@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>周杰伦歌曲关系知识图谱</title>
+
+    <link rel="stylesheet" href="./lib/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+
+<body>
+    <header>
+        <div class="navbar navbar-dark fixed-top bg-dark shadow-sm">
+            <div class="container">
+                <a href="#" class="navbar-brand d-flex align-items-center">
+                    <img src="" alt="">
+                    <strong>周杰伦歌曲关系知识图谱</strong>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <div class="container-fluid">
+        <div class="row">
+            <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+                <div class="position-sticky pt-3 sidebar-sticky">
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#intro" data-label="#intro">
+                                <span></span>
+                                项目简介
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#query" data-label="#query">
+                                <span></span>
+                                图谱问答
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+                <div id="intro">
+                    <h1 class="h3 mt-2">项目简介</h1>
+                    <hr>
+                    <div class="mt-5 row">
+                        TODO：这里写项目简介
+                    </div>
+                </div>
+                <div id="query">
+                    <h1 class="h3 mt-2">图谱问答</h1>
+                    <hr>
+                    <div class="mt-5 row justify-content-center">
+                        <form class="col-10">
+                            <div class="row mb-3 justify-content-center">
+                                <label class="col-2 col-form-label" for="inputGroupSelect01">参考模版</label>
+                                <select class="col-10" id="inputGroupSelect01">
+                                    <option selected>问句模版1</option>
+                                    <option value="1">One</option>
+                                    <option value="2">Two</option>
+                                    <option value="3">Three</option>
+                                </select>
+                            </div>
+
+                            <div class="row mb-3 justify-content-center">
+                                <label class="col-2 col-form-label" for="question">查询问句</label>
+                                <input type="text" class="col-10" id="question" placeholder="请参照模版输入查询问句">
+                            </div>
+                            <div class="text-center">
+                                <button type="button" class="btn btn-primary">查询</button>
+                            </div>
+                            <hr>
+                        </form>
+                        <div class="col-10 answer">
+                            TODO：answer
+                        </div>
+                    </div>
+                </div>
+
+            </main>
+        </div>
+    </div>
+
+    <script src="./lib/bootstrap.min.js"></script>
+    <script src="./lib/jquery-3.6.3.js"></script>
+    <script src="./js/index.js"></script>
+</body>
+
+</html>
