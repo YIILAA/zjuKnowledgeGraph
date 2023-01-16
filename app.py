@@ -1,6 +1,7 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS # 允许跨域访问
-from db import get_db
+
+from handler import query_handler
 
 app = Flask(__name__)
 CORS(app)
@@ -19,14 +20,9 @@ def intro():
 # 返回数据即可
 @app.route('/query', methods=['GET', 'POST'])
 def query():
-    print('into query')
-    if request.method == 'GET':
-        # 获取数据
-        print(request.form)
-        # 数据验证
-        # 执行数据库操作
-        #db = get_db()
-        return 'response answer'
+    if request.method == 'POST':
+        question = request.form["question"]
+        return query_handler(question)
 
 
 if __name__ == "__main__":
