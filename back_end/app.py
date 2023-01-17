@@ -1,3 +1,4 @@
+# coding=utf-8
 from flask import Flask, request, jsonify
 from flask_cors import CORS # 允许跨域访问
 
@@ -13,15 +14,14 @@ def get_guery():
 def index():
     return 'server running'
 
-@app.route('/intro')
-def intro():
-    pass
-
 # 返回数据即可
 @app.route('/query', methods=['GET', 'POST'])
 def query():
     if request.method == 'POST':
-        question = request.form["question"]
+        # 当使用Ajax传递，post的数据其实是一个FormData
+        # question = request.form["question"]
+        # axios则是一个PayLoad
+        question = request.get_json()["question"]
         return query_handler(question)
 
 

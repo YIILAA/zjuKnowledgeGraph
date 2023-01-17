@@ -1,3 +1,4 @@
+# coding=utf-8
 from db import get_db, close_db
 import re
 
@@ -12,9 +13,9 @@ patterns = [
 ]
 
 queries = [
-  "MATCH (a:作品{name:$val})-[:所属专辑]->(b:专辑) RETURN b.name AS name",
-  "MATCH (a:作品{name:$val})-[:作词]->(b:人物) RETURN b.name AS name",
-  "MATCH (a:作品{name:$val})-[:歌手]->(b:人物) RETURN b.name AS name",
+  "MATCH (a:作品{name:$val})-[:所属专辑]->(b:专辑) RETURN b.name AS name LIMIT 1",
+  "MATCH (a:作品{name:$val})-[:作词]->(b:人物) RETURN b.name AS name LIMIT 1",
+  "MATCH (a:作品{name:$val})-[:歌手]->(b:人物) RETURN b.name AS name LIMIT 1",
   "MATCH (a:专辑{name:$val})<-[:所属专辑]-(b:作品) RETURN b.name AS name",
   "MATCH (a:人物{name:$val})<-[:歌手]-(b:作品) RETURN b.name AS name LIMIT 10",
   "MATCH (a:人物{name:$val})<-[:作词]->(b:作品) RETURN b.name AS name LIMIT 10",
@@ -46,7 +47,7 @@ def query_handler(question):
   print("匹配失败")
   return {
     "state": 1,
-    "msg": "查询失败，没有匹配的字符串"
+    "msg": "查询失败，没有匹配的问句模版"
   }
 
 if __name__ == "__main__":

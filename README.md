@@ -6,15 +6,13 @@
 
 本项目尝试对周杰伦出道以来参与过的所有歌曲作品、专辑以及合作歌手、作词人进行关系分析，将这些信息组织成三元组构建知识图谱，并基于知识图谱实现一个有关周杰伦歌曲的在线检索系统。
 
-首先利用爬虫技术爬取有关周杰伦歌曲信息的文本描述，利用知识图谱抽取工具DeepKE抽取文本描述中的实体和关系，并将这些信息组织成三元组存入.csv格式文件中，然后使用非关系型数据库neo4j搭建知识图谱。随后，我们又用基于python的轻量级后端开发框架flask和前端框架Vue实现了一个基于知识图谱的在线检索系统。
+我们首先利用爬虫技术爬取有关周杰伦歌曲信息的文本描述，利用知识图谱抽取工具DeepKE抽取文本描述中的实体和关系，并将这些信息组织成三元组存入.csv格式文件中，然后使用非关系型数据库neo4j搭建知识图谱。最后，我们基于python的轻量级后端开发框架flask和前端框架Vue实现了一个基于知识图谱的在线检索系统。
 
 ## 技术栈
 
-前端bootstrap, Ajax
+前端采用Vue框架，并利用bootstrap, axios
 
-- 打算改成使用vue
-
-后端采用python, flask
+后端采用python和Flask框架
 
 数据库neo4j
 
@@ -22,30 +20,29 @@
 
 ### 前端
 
-todo
+/font_end文件夹
+
+```
+cd 
+npm install
+npm run dev
+```
 
 ### 后端
 
-安装python依赖
+/back_end文件夹
 
 创建虚拟环境并开启
 
 ```
-python -m venv neoflix
-source ./neoflix/bin/activate
+python3 -m venv venv
+source ./venv/bin/activate
 ```
 
-Todo:添加requirement文件
+安装python依赖
 
 ```
 pip install -r requirements.txt
-```
-
-```
-$ pip install flask
-$ pip install flask-cors
-$ pip install neo4j
-neo4j-driver
 ```
 
 开启服务器
@@ -53,6 +50,8 @@ neo4j-driver
 ```
 $ python app.py
 ```
+
+数据库目前连接的是neo4j云数据库
 
 ## 功能
 

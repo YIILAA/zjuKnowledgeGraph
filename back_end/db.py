@@ -1,3 +1,4 @@
+# coding=utf-8
 # 数据库相关操作
 from neo4j import GraphDatabase
 
